@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>連比くん</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>連比くん</h1>
+            <p>比の計算トレーニング</p>
+        </header>
+
+        <section id="question-area">
+
+            <div id="point-diagram">
+                <!-- A,B,C,Dの図を表示 -->
+            </div>
+
+            <div id="question">
+                <!-- 問題文を表示 -->
+            </div>
+
+        </section>
+
+        <section id="answer-area">
+
+            <h2>AB : BC : CD =</h2>
+
+            <div class="answer-inputs">
+                <input type="number" id="answer-a" min="1" placeholder="AB">
+                <span>:</span>
+                <input type="number" id="answer-b" min="1" placeholder="BC">
+                <span>:</span>
+                <input type="number" id="answer-c" min="1" placeholder="CD">
+            </div>
+
+            <button id="check-button">答え合わせ</button>
+
+            <div id="result"></div>
+
+        </section>
+
+        <button id="next-button">次の問題</button>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
