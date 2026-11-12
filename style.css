@@ -1,0 +1,224 @@
+
+/* =========================
+   基本設定
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px 14px;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Noto Sans JP",
+        "Yu Gothic",
+        sans-serif;
+    background: #EAF0F7;
+    color: #263B50;
+}
+
+.container {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+
+header {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #28669D;
+    letter-spacing: 0.06em;
+}
+
+header p {
+    margin: 6px 0 0;
+    color: #718399;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   問題エリア
+========================= */
+
+#question-area {
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 22px 18px;
+    box-shadow: 0 3px 12px rgba(40, 75, 110, 0.08);
+}
+
+#point-diagram {
+    width: 100%;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+/* JavaScriptで生成するSVG */
+#point-diagram svg {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+}
+
+#question {
+    background: #F1F6FB;
+    border-radius: 12px;
+    padding: 18px 12px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 2;
+    color: #285B87;
+}
+
+/* =========================
+   解答エリア
+========================= */
+
+#answer-area {
+    margin-top: 22px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 22px 18px;
+    box-shadow: 0 3px 12px rgba(40, 75, 110, 0.08);
+}
+
+#answer-area h2 {
+    margin: 0 0 18px;
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+.answer-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.answer-inputs input {
+    width: 0;
+    min-width: 0;
+    flex: 1;
+    height: 60px;
+    border: 2px solid #B8C9D9;
+    border-radius: 12px;
+    background: #FAFCFE;
+    color: #263B50;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+}
+
+.answer-inputs input:focus {
+    border-color: #347BB8;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(52, 123, 184, 0.12);
+}
+
+.answer-inputs span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #718399;
+}
+
+/* =========================
+   ボタン
+========================= */
+
+button {
+    display: block;
+    width: 100%;
+    min-height: 58px;
+    margin-top: 18px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background: #347BB8;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background 0.15s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+    background: #245E91;
+}
+
+button:focus-visible {
+    outline: 3px solid #80B8E5;
+    outline-offset: 3px;
+}
+
+#next-button {
+    background: #527B9D;
+    margin-top: 14px;
+}
+
+/* =========================
+   判定結果
+========================= */
+
+#result {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+#result.correct {
+    color: #218653;
+}
+
+#result.incorrect {
+    color: #D15B52;
+}
+
+/* =========================
+   PC・タブレット調整
+========================= */
+
+@media (min-width: 600px) {
+    body {
+        padding: 36px 24px;
+    }
+
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    #question-area,
+    #answer-area {
+        padding: 28px;
+    }
+
+    .answer-inputs {
+        gap: 14px;
+    }
+
+    .answer-inputs input {
+        max-width: 120px;
+        height: 66px;
+    }
+}
