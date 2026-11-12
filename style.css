@@ -222,3 +222,21 @@ button:focus-visible {
         height: 66px;
     }
 }
+
+/* 非表示制御 */
+[hidden] {
+    display: none !important;
+}
+
+/* 回答後の入力欄 */
+.answer-inputs input:disabled {
+    background: #EAF0F7;
+    color: #718399;
+    border-color: #D5DFE8;
+}
+
+/* 回答後のボタン */
+button:disabled {
+    background: #AAB8C5;
+    cursor: default;
+}
