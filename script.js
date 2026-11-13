@@ -277,20 +277,35 @@ function checkAnswer() {
 
     stats.total++;
 
-    if (isCorrect) {
+if (isCorrect) {
 
-        stats.correct++;
-        stats.streak++;
+    stats.correct++;
+    stats.streak++;
 
-        stats.bestStreak = Math.max(
-            stats.bestStreak,
-            stats.streak
-        );
+    const cheers = [
+        "やった！",
+        "いいぞ！",
+        "すごい！"
+    ];
 
-        result.textContent = "正解！よくできました！";
-        result.className = "correct";
+    if (stats.streak >= 2) {
+
+        const cheer = cheers[
+            Math.floor(Math.random() * cheers.length)
+        ];
+
+        result.textContent =
+            `${stats.streak}問連続正解！${cheer}`;
 
     } else {
+
+        result.textContent = "正解！よくできました！";
+
+    }
+
+    result.className = "correct";
+
+} else {
 
         stats.streak = 0;
 
