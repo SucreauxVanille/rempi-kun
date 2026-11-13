@@ -82,7 +82,18 @@ function generateQuestion() {
     let p, q, r, s;
     let answer;
 
-    while (true) {
+   let attempts = 0;
+   const MAX_ATTEMPTS = 1000;
+
+   while (true) {
+
+       attempts++;
+
+       if (attempts > MAX_ATTEMPTS) {
+           throw new Error(
+               "問題を生成できませんでした。ページを再読み込みしてください。"
+           );
+       }
 
         // 1～9の整数を生成
         p = Math.floor(Math.random() * 9) + 1;
@@ -102,7 +113,11 @@ function generateQuestion() {
 
         // BCが正になること
         if (q * r <= p * s) continue;
-
+       
+        // 分割数が17になる問題は除外
+        if (p + q === 17) continue;
+        if (r + s === 17) continue;
+       
         // 答えを計算
         const x = p * (r + s);
         const y = q * r - p * s;
